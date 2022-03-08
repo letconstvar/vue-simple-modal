@@ -1,0 +1,48 @@
+{
+  "name": "vue-simple-modal",
+  "license": "MIT",
+  "private": false,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.2.25"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.2.0",
+    "typescript": "^4.5.4",
+    "vite": "^2.8.0",
+    "vue-tsc": "^0.29.8"
+  },
+  "author": {
+    "name": "zhou",
+    "email": "1985225667@qq.com"
+  },
+  "main": "dist/vue-simple-modal.umd.js",
+  "module": "dist/vue-simple-modal.es.js",
+  "types": "modal.d.ts",
+  "files": [
+    "dist/*",
+    "modal.d.ts"
+  ],
+  "keywords": [
+    "vue",
+    "vue3",
+    "vuejs",
+    "modal",
+    "typescript",
+    "vue-simple-modal",
+    "vue3-simple-modal"
+  ],
+  "bugs": {
+    "url": "https://github.com/letconstvar/vue-simple-modal/issues",
+    "email": "1985225667@qq.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/letconstvar/vue-simple-modal"
+  }
+}
