@@ -16,8 +16,8 @@ export default defineConfig({
       },
     },
     lib: {
-      entry: './packages/modal/index.ts',
-      name: 'vue-simple-modal',
-    },
+      entry: './packages/dialog/index.ts',
+      name: 'vue-simple-dialog',
+    }
   }
 })

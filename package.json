@@ -1,8 +1,8 @@
 {
-  "name": "vue-simple-modal",
+  "name": "vue-simple-dialog",
   "license": "MIT",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.5",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -21,28 +21,36 @@
     "name": "zhou",
     "email": "1985225667@qq.com"
   },
-  "main": "dist/vue-simple-modal.umd.js",
-  "module": "dist/vue-simple-modal.es.js",
-  "types": "modal.d.ts",
+  "main": "dist/vue-simple-dialog.umd.js",
+  "module": "dist/vue-simple-dialog.es.js",
+  "types": "dialog.d.ts",
   "files": [
     "dist/*",
-    "modal.d.ts"
+    "dialog.d.ts",
+    "packages/dialog/types.ts"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/vue-simple-dialog.es.js",
+      "require": "./dist/vue-simple-dialog.umd.js"
+    }
+  },
   "keywords": [
     "vue",
     "vue3",
     "vuejs",
+    "dialog",
     "modal",
     "typescript",
-    "vue-simple-modal",
-    "vue3-simple-modal"
+    "vue-simple-dialog",
+    "vue3-simple-dialog"
   ],
   "bugs": {
-    "url": "https://github.com/letconstvar/vue-simple-modal/issues",
+    "url": "https://github.com/letconstvar/vue-simple-dialog/issues",
     "email": "1985225667@qq.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/letconstvar/vue-simple-modal"
+    "url": "https://github.com/letconstvar/vue-simple-dialog"
   }
 }

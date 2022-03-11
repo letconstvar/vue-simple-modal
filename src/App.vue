@@ -1,28 +1,28 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import Modal from '../packages/modal/index.vue';
+import Dialog from '../packages/dialog/index.vue';
 
 const visible = ref(false);
 
 const handleClose = () => {
-  console.log('modal is closed')
+  console.log('dialog is closed')
 };
 </script>
 
 <template>
-  <Modal 
+  <Dialog 
     v-model:visible="visible" 
     top="10%" 
     @on-close="handleClose" 
-    :modal-style="{
+    :dialog-style="{
       width: '30%',
       height: '400px',
       borderRadius: '2px',
       background: '#fff',
     }"
   >
-    modal slot
-  </Modal>
+    dialog slot
+  </Dialog>
 
-  <button @click="visible = true">test modal</button>
+  <button @click="visible = true">test dialog</button>
 </template>

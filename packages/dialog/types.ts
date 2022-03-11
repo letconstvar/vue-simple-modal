@@ -1,6 +1,6 @@
 import { CSSProperties, ExtractPropTypes, PropType } from 'vue';
 
-export const ModalProp = {
+export const DialogProp = {
   top: {
     type: String
   },
@@ -12,7 +12,7 @@ export const ModalProp = {
     type: String,
     default: 'rgba(0,0,0,.45)'
   },
-  modalStyle: {
+  dialogStyle: {
     type: Object as PropType<CSSProperties>,
     default: () => {
       return {
@@ -25,4 +25,4 @@ export const ModalProp = {
   
 } as const
 
-export type TModalProp = ExtractPropTypes<typeof ModalProp>
+export type TDialogProp = ExtractPropTypes<typeof DialogProp>

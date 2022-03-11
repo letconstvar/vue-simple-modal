@@ -2,13 +2,13 @@
   <teleport to="body">
     <transition name="__fade">
       <div
-        class="__simple-modal"
+        class="__simple-dialog"
         v-if="visible"
         :style="{ background: maskColor }"
         @click.self.stop="handleClose"
       >
         <transition name="__fade">
-          <div :style="getModalStyle()">
+          <div :style="getDialogStyle()">
             <slot></slot>
           </div>
         </transition>
@@ -20,24 +20,17 @@
 
 <script lang="ts" setup>
 import { CSSProperties } from 'vue';
-import { ModalProp } from './types';
+import { DialogProp } from './types';
 
-const props = defineProps(ModalProp);
+const props = defineProps(DialogProp);
 
-const getModalStyle = (): CSSProperties => {
-  console.log('css', {
-    position: 'absolute',
-    top: props.top ? props.top : '50%',
-    left: '50%',
-    transform: props.top ? 'translateX(-50%)': 'translate(-50%, -50%)',
-    ...props.modalStyle
-  });
+const getDialogStyle = (): CSSProperties => {
   return {
     position: 'absolute',
     top: props.top ? props.top : '50%',
     left: '50%',
     transform: props.top ? 'translateX(-50%)': 'translate(-50%, -50%)',
-    ...props.modalStyle
+    ...props.dialogStyle
   }
 };
 
@@ -68,7 +61,7 @@ const handleClose = () => {
   .__fade-leave-active {
     transition: all 0.5s ease-out;
   }
-  .__simple-modal {
+  .__simple-dialog {
     position: absolute;
     top: 0;
     left: 0;

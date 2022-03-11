@@ -1,46 +1,45 @@
-# vue-simple-modal
+# vue-simple-dialog
 
 
 
 ## Installation
 
 ```
-npm i vue-simple-modal -D
+npm i vue-simple-dialog -D
 ```
 
 ## Description
 
-
+a lightweight customizable dialog box
 
 ## API
 
 | Property   | Description                      | Type          | Default                                               | Required |
 | ---------- | -------------------------------- | ------------- | ----------------------------------------------------- | -------- |
-| visible    | whether the modal box is visible | boolean       |                                                       | true     |
-| top        | value for `top` of modal CSS     | string        | false                                                 | false    |
+| visible    | whether the dialog box is visible | boolean       |                                                       | true     |
+| top        | value for `top` of dialog CSS     | string        | false                                                 | false    |
 | maskColor  | mask `background-color`          | string        | rgba(0,0,0,.45)                                       | false    |
-| modalStyle | modal style                      | CSSProperties | { width: '30%', height: '400px', background: '#fff' } | false    |
+| dialogStyle | dialog style                      | CSSProperties | { width: '30%', height: '400px', background: '#fff' } | false    |
 
 ### event
 
 | Events Name | Description                                     | Arguments  | Version |
 | :---------- | :---------------------------------------------- | :--------- | :------ |
-| on-close    | triggered when the container reaches the bottom | () => void |         |
+| on-close    | triggers when the dialog closes | () => void |         |
 
 
 
 ## Using
 
-main.js
+main.ts
 
 ```javascript
 import { createApp } from 'vue'
 import App from './App.vue'
+import vueSimpleDialog from 'vue-simple-dialog';
+import 'vue-simple-dialog/dist/style.css';
 
-import VueSimpleScroller from 'vue-simple-scroller';
-import 'vue-simple-scroller/dist/style.css';
-
-createApp(App).use(VueSimpleScroller).mount('#app')
+createApp(App).use(vueSimpleDialog).mount('#app')
 ```
 
 
@@ -52,31 +51,28 @@ demo.vue
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue';
-import Modal from '../packages/modal/index.vue';
 
 const visible = ref(false);
-
 const handleClose = () => {
-  console.log('modal is closed')
+  console.log('dialog is closed')
 };
 </script>
 
 <template>
-  <Modal 
+  <vue-simple-dialog 
     v-model:visible="visible" 
     top="10%" 
     @on-close="handleClose" 
-    :modal-style="{
+    :dialog-style="{
       width: '30%',
       height: '400px',
       borderRadius: '2px',
       background: '#fff',
     }"
   >
-    modal slot
-  </Modal>
-
-  <button @click="visible = true">test modal</button>
+    dialog slot
+  </vue-simple-dialog>
+  <button @click="visible = true">test dialog</button>
 </template>
 ```
 
